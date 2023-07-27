@@ -15,11 +15,11 @@ const Contact = () => {
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <div className="flex flex-col items-center gap-5 py-5 mx-2">
+      <div className="flex flex-col items-center gap-5 py-5 mx-2 ">
         <h3 className="uppercase text-maincontent text-[40px] font-semibold">
           Liên hệ để được tư vấn
         </h3>
-        <div className="flex justify-center gap-32 ">
+        <div className="flex justify-center d:gap-32 d:flex-row p:flex-col p:gap-2">
           <div>
             <p className="text-center text-[20px] font-normal text-maincontent">
               Hotline
@@ -30,30 +30,28 @@ const Contact = () => {
             <p className="text-center text-[20px] font-normal text-maincontent">
               Fax
             </p>
-            <p> 02973.77.8282</p>
+            <p className=" text-center"> 02973.77.8282</p>
           </div>
 
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col ">
-              <h3>Kết nối với chúng tôi</h3>
-              <div className="flex mt-2 gap-2">
-                {SocialMediaCustom.map((items, idx) => {
-                  let Icon = IconMapping[items.icon];
+          <div className="flex flex-col items-center">
+            <h3>Kết nối với chúng tôi</h3>
+            <div className="flex mt-2 gap-2">
+              {SocialMediaCustom.map((items, idx) => {
+                let Icon = IconMapping[items.icon];
 
-                  return (
-                    <div
-                      key={idx}
-                      className={`${items.style} p-2 border rounded-full hover:scale-110 duration-300 border-black hover:border-white`}
-                    >
-                      {Icon && (
-                        <a href={`https:// `} target="_blank">
-                          <Icon />
-                        </a>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
+                return (
+                  <div
+                    key={idx}
+                    className={`${items.style} p-2 border rounded-full hover:scale-110 duration-300 border-black hover:border-white`}
+                  >
+                    {Icon && (
+                      <a href={`https:// `} target="_blank">
+                        <Icon />
+                      </a>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

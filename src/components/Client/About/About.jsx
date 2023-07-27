@@ -3,8 +3,8 @@ import React from "react";
 const About = () => {
   return (
     <div className="py-10 mx-2">
-      <h3 className="uppercase text-[18px] py-5 font-semibold">giới thiệu</h3>
-      <div className="flex flex-col gap-3">
+      <h3 className="uppercase text-[22px] py-5 font-semibold">giới thiệu</h3>
+      <div className="flex flex-col gap-3 text-[18px]">
         <p>
           Tiền thân là một cơ sở TÔ BA được thành lập vào năm 1994. Sau khi luật
           doanh nghiệp ra đời, Công ty TÔ BA chuyển thành công ty TNHH SX - TM

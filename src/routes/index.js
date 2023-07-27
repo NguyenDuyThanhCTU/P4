@@ -4,6 +4,8 @@
 import About from "../components/Client/About/About";
 import Contact from "../components/Client/Contact/Contact";
 import Home from "../components/Client/Home/Home";
+import News from "../components/Client/News/News";
+import Promotion from "../components/Client/Promotion/Promotion";
 import Videos from "../components/Client/Videos/Videos";
 // import AdminLayout from "../Layout/AdminLayout/AdminLayout";
 // import Introduction from "../components/Client/Introduction/Introduction";
@@ -45,6 +47,16 @@ export const AllRoutes = [
   {
     path: "/videos",
     component: Videos,
+    Layout: ClientLayout,
+  },
+  {
+    path: "/tin-tuc",
+    component: News,
+    Layout: ClientLayout,
+  },
+  {
+    path: "/khuyen-mai",
+    component: Promotion,
     Layout: ClientLayout,
   },
 ];
