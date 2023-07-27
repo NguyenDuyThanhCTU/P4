@@ -5,7 +5,7 @@ import { AllRoutes } from "./routes/index";
 import { AuthProviders } from "./Context/AuthProviders";
 import { StateProvider } from "./Context/StateProvider";
 import { DataProviders } from "./Context/DataProviders";
-import Fetch from "./components/Item/Fetch";
+// import Fetch from "./components/Item/Fetch";
 import DefaultLayout from "./Layout/DefaultLayout";
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
       <DataProviders>
         <StateProvider>
           <AuthProviders>
-            <Fetch />
+            {/* <Fetch /> */}
             <Router>
               <Routes>
                 {AllRoutes.map((route, index) => {
