@@ -1,7 +1,10 @@
 // import Login from "../components/Login/Login";
 // import Admin from "../components/Admin/Admin";
 // import DefaultLayout from "../Layout/DefaultLayout";
+import About from "../components/Client/About/About";
+import Contact from "../components/Client/Contact/Contact";
 import Home from "../components/Client/Home/Home";
+import Videos from "../components/Client/Videos/Videos";
 // import AdminLayout from "../Layout/AdminLayout/AdminLayout";
 // import Introduction from "../components/Client/Introduction/Introduction";
 // import Contact from "../components/Client/Contact/Contact";
@@ -27,6 +30,21 @@ export const AllRoutes = [
   {
     path: "/",
     component: Home,
+    Layout: ClientLayout,
+  },
+  {
+    path: "/about",
+    component: About,
+    Layout: ClientLayout,
+  },
+  {
+    path: "/lien-he",
+    component: Contact,
+    Layout: ClientLayout,
+  },
+  {
+    path: "/videos",
+    component: Videos,
     Layout: ClientLayout,
   },
 ];

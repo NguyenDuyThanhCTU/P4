@@ -29,7 +29,7 @@ module.exports = {
         BlueFF: "#1A49FF",
 
         //Custom
-        main: "#4fdbfc",
+        main: "#28b241",
         secondary: "#0693e3",
       },
     },

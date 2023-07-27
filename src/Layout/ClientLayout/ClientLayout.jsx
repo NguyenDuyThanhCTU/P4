@@ -7,26 +7,28 @@ import Header from "./Section/Header";
 import Hotline from "./Section/Hotline";
 import OnTop from "./Section/OnTop";
 import Copyright from "./Section/Copyright";
+import Footer from "./Section/Footer";
 
 const ClientLayout = ({ children }) => {
   const { TradeMarkData } = useData();
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>{TradeMarkData.websiteName}</title>
         <link rel="icon" href={TradeMarkData.websiteIco} />
-      </Helmet>
+      </Helmet> */}
       <Loading />
 
-      <div>
-        <Header />
-        <div className=" ">{children}</div>
+      <Header />
+      <div className=" w-full flex justify-center ">
+        <div className="w-[1200px]">{children}</div>
       </div>
-      <div>
-        <OnTop />
-        <Hotline />
-      </div>
+
+      <Footer />
+      <OnTop />
+      <Hotline />
+
       <Copyright />
     </>
   );

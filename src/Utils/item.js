@@ -176,7 +176,7 @@ export const SocialMediaCustom = [
     icon: "SiZalo",
     image:
       "https://atpsoftware.vn/wp-content/uploads//2020/03/20211208103735_id_zalo-1.jpg",
-    style: "hover:text-blue-600 hover:bg-white w-10",
+    style: "hover:text-blue-600 hover:bg-white ",
   },
   {
     id: 1,
@@ -192,7 +192,7 @@ export const SocialMediaCustom = [
     title: "Trang Tiktok",
     icon: "FaTiktok",
     image: "https://images.alphacoders.com/112/1123670.png",
-    style: "hover:bg-black hover:text-white p-1",
+    style: "hover:bg-black hover:text-white ",
   },
 
   {
@@ -201,7 +201,7 @@ export const SocialMediaCustom = [
     icon: "BsYoutube",
     image:
       "https://img.nhandan.com.vn/Files/Images/2021/04/13/3A708284_F5B8_407D_ADC0_339DBEE-1618275907021.jpeg",
-    style: "hover:bg-red-600 hover:text-white p-1",
+    style: "hover:bg-red-600 hover:text-white ",
   },
 ];
 
@@ -270,22 +270,122 @@ export const HeaderItems = [
   {
     name: "Trang chủ",
     link: "/",
+    content: [
+      {
+        name: "",
+        link: "",
+      },
+    ],
   },
   {
-    name: "Giới thiệu",
-    link: "/gioi-thieu",
+    name: "Nông nghiệp",
+    link: "/nong-nghiep",
+    content: [
+      {
+        name: "PHÂN HỮU CƠ CHIM YẾN",
+        link: "phan-huu-co-chim-yen",
+      },
+      {
+        name: "PHÂN HỮU CƠ AUSTRALIA",
+        link: "phan-huu-co-australia",
+      },
+      {
+        name: "THUỐC BẢO VỆ THỰC VẬT",
+        link: "thuoc-bao-ve-thuc-vat",
+      },
+      {
+        name: "PHÂN BÓN LÁ - THUỐC DƯỠNG ",
+        link: "phan-bon-la-thuoc-duong",
+      },
+      {
+        name: "PBL & BVTV AUSTRALIA",
+        link: "pbl-bvtv-austral",
+      },
+      {
+        name: "SPRAYPHOS 620SL",
+        link: "sprayphos-620sl",
+      },
+      {
+        name: "SẢN PHẢM CHO CAO SU ",
+        link: "san-pham-cho-cao-su",
+      },
+      {
+        name: "SẢN PHẨM KHÁC",
+        link: "san-pham-khac",
+      },
+    ],
   },
   {
-    name: "Thuê xe",
-    link: "/thue-xe",
+    name: "Thủy sản",
+    link: "/thuy-san",
+    content: [
+      {
+        name: "XỬ LÝ & CẢI TẠO MÔI TRƯỜNG",
+        link: "xu-ly-cai-tao-moi-truong",
+      },
+      {
+        name: "DINH DƯỠNG & THỨC ĂN BỔ SUNG",
+        link: "dinh-duong-thuc-an-bo-sung",
+      },
+      {
+        name: "MEN TIÊU HÓA",
+        link: "men-tieu-hoa",
+      },
+      {
+        name: "THẢO DƯỢC & TRỊ BỆNH",
+        link: "thao-duoc-tri-benh",
+      },
+    ],
   },
   {
-    name: "Đặt xe trực tuyến",
-    link: "",
+    name: "Chăn nuôi",
+    link: "/chan-nuoi",
+    content: [
+      {
+        name: "DINH DƯỠNG - HỖ TRỢ",
+        link: "dinh-duong-ho-tro",
+      },
+      {
+        name: "THUỐC TRỊ BỆNH",
+        link: "thuoc-tri-benh",
+      },
+      {
+        name: "VACCINE",
+        link: "vaccine",
+      },
+    ],
   },
   {
-    name: "Gọi xe 0933456474",
-    link: "",
+    name: "Tin tức",
+    link: "/tin-tuc",
+    content: [
+      {
+        name: "Video",
+        link: "videos",
+      },
+      {
+        name: "Tin tức",
+        link: "tin-tuc",
+      },
+      {
+        name: "Khuyến mãi",
+        link: "khuyen-mai",
+      },
+    ],
+  },
+  {
+    name: "Chúng tôi",
+    link: "/about",
+    content: [
+      {
+        name: "giới thiệu",
+        link: "about",
+      },
+      {
+        name: "Liên hệ",
+        link: "lien-he",
+      },
+    ],
   },
 ];
 
