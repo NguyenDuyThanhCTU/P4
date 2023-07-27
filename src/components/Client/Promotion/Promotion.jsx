@@ -8,7 +8,7 @@ import {
 
 const Promotion = () => {
   return (
-    <div className="flex ">
+    <div className="flex d:flex-row p:flex-col ">
       <SubPost Data={SubPromotionNewsItems} />
       <MainPost Data={MainPromotionNewsItems} title="Khuyến mãi" />
     </div>

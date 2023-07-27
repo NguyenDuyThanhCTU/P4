@@ -44,7 +44,7 @@ const Header = () => {
             <div className="w-[1200px] flex justify-between items-center py-2">
               <div className="flex gap-7 font-light uppercase text-[16px]">
                 {HeaderItems.map((items, idx) => (
-                  <div className="group">
+                  <div className="group hover:text-main">
                     <Link to={items.link}>
                       <div className="flex items-center gap-3">
                         <p>{items.name}</p>

@@ -13,7 +13,7 @@ const ClientLayout = ({ children }) => {
   const { TradeMarkData } = useData();
 
   return (
-    <>
+    <div className="relative">
       {/* <Helmet>
         <title>{TradeMarkData.websiteName}</title>
         <link rel="icon" href={TradeMarkData.websiteIco} />
@@ -30,7 +30,7 @@ const ClientLayout = ({ children }) => {
       <Hotline />
 
       <Copyright />
-    </>
+    </div>
   );
 };
 

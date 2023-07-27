@@ -98,3 +98,67 @@ export const MainPromotionNewsItems = [
     tag: "Khuyến mãi",
   },
 ];
+
+export const ProductItems = [
+  {
+    name: "",
+    type: "",
+    typeName: "",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/C%C3%B4ng%20ty%20c%E1%BB%95%20ph%E1%BA%A7n%20n%C3%B4ng%20nghi%E1%BB%87p%20sao%20v%C3%A0ng%2FproductDemo%2Fz4549353652133_e5d29adf26c59150514d3313d659f1fc.jpg?alt=media&token=b05797aa-d0e7-41c7-b773-3b1ccc1d3122",
+  },
+  {
+    name: "",
+    type: "",
+    typeName: "",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/C%C3%B4ng%20ty%20c%E1%BB%95%20ph%E1%BA%A7n%20n%C3%B4ng%20nghi%E1%BB%87p%20sao%20v%C3%A0ng%2FproductDemo%2Fz4549353657191_f8ca8307c0427124bd90ca9756f5b1f1.jpg?alt=media&token=46596c8c-4949-4cd1-aedb-685e68609e40",
+  },
+  {
+    name: "",
+    type: "",
+    typeName: "",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/C%C3%B4ng%20ty%20c%E1%BB%95%20ph%E1%BA%A7n%20n%C3%B4ng%20nghi%E1%BB%87p%20sao%20v%C3%A0ng%2FproductDemo%2Fz4549353660910_d5f081623644f2e6fe48e3b1e2e0d410.jpg?alt=media&token=dc26e05e-86c1-4b77-aed9-7753023c46a5",
+  },
+  {
+    name: "",
+    type: "",
+    typeName: "",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/C%C3%B4ng%20ty%20c%E1%BB%95%20ph%E1%BA%A7n%20n%C3%B4ng%20nghi%E1%BB%87p%20sao%20v%C3%A0ng%2FproductDemo%2Fz4549353667411_5e7e9fbcb24b5a0a48e03949beaaffc3.jpg?alt=media&token=1e16c09e-dea6-4cdf-928a-40d05105a02d",
+  },
+  {
+    name: "",
+    type: "",
+    typeName: "",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/C%C3%B4ng%20ty%20c%E1%BB%95%20ph%E1%BA%A7n%20n%C3%B4ng%20nghi%E1%BB%87p%20sao%20v%C3%A0ng%2FproductDemo%2Fz4549353672811_bcdf50ff5a84c5d1088efd7bf1fafa4b.jpg?alt=media&token=cdf4ba42-7a5e-48b4-9e4c-e4839d0ef7af",
+  },
+  {
+    name: "",
+    type: "",
+    typeName: "",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/C%C3%B4ng%20ty%20c%E1%BB%95%20ph%E1%BA%A7n%20n%C3%B4ng%20nghi%E1%BB%87p%20sao%20v%C3%A0ng%2FproductDemo%2Fz4549353672993_43678b51cb2754abbb6c6daf9b6ff6cf.jpg?alt=media&token=d072d146-9791-4b11-a1c7-a689f38110cc",
+  },
+];
+
+export const HomeSlideItems = [
+  {
+    image:
+      "https://theme.hstatic.net/1000065644/1000522025/14/slideshow_1.jpg?v=221",
+  },
+  {
+    image:
+      "https://theme.hstatic.net/1000065644/1000522025/14/slideshow_2.jpg?v=221",
+  },
+  {
+    image:
+      "https://theme.hstatic.net/1000065644/1000522025/14/slideshow_3.jpg?v=221",
+  },
+  {
+    image:
+      "https://theme.hstatic.net/1000065644/1000522025/14/slideshow_4.jpg?v=221",
+  },
+];

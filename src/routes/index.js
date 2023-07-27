@@ -1,22 +1,11 @@
-// import Login from "../components/Login/Login";
-// import Admin from "../components/Admin/Admin";
-// import DefaultLayout from "../Layout/DefaultLayout";
 import About from "../components/Client/About/About";
 import Contact from "../components/Client/Contact/Contact";
 import Home from "../components/Client/Home/Home";
 import News from "../components/Client/News/News";
 import Promotion from "../components/Client/Promotion/Promotion";
 import Videos from "../components/Client/Videos/Videos";
-// import AdminLayout from "../Layout/AdminLayout/AdminLayout";
-// import Introduction from "../components/Client/Introduction/Introduction";
-// import Contact from "../components/Client/Contact/Contact";
-// import News from "../components/Client/News/News";
-// import Designs from "../components/Client/Designs/Designs";
-// import PostDesign from "../components/Client/Post/PostDesign";
-// import PostDetail from "../components/Client/Post/PostDetail";
-// import Construction from "../components/Client/Construction/Construction";
-// import PostConstruction from "../components/Client/Post/PostConstruction";
 import ClientLayout from "../Layout/ClientLayout/ClientLayout";
+import Collection from "../components/Client/Collection.jsx/Collection";
 
 export const AllRoutes = [
   // {
@@ -57,6 +46,11 @@ export const AllRoutes = [
   {
     path: "/khuyen-mai",
     component: Promotion,
+    Layout: ClientLayout,
+  },
+  {
+    path: "/collections/:id",
+    component: Collection,
     Layout: ClientLayout,
   },
 ];

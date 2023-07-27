@@ -279,79 +279,95 @@ export const HeaderItems = [
   },
   {
     name: "Nông nghiệp",
-    link: "/nong-nghiep",
+    link: "/collections/nong-nghiep",
     content: [
       {
         name: "PHÂN HỮU CƠ CHIM YẾN",
-        link: "phan-huu-co-chim-yen",
+        link: "collections/phan-huu-co-chim-yen",
       },
       {
         name: "PHÂN HỮU CƠ AUSTRALIA",
-        link: "phan-huu-co-australia",
+        link: "collections/phan-huu-co-australia",
       },
       {
         name: "THUỐC BẢO VỆ THỰC VẬT",
-        link: "thuoc-bao-ve-thuc-vat",
+        link: "collections/thuoc-bao-ve-thuc-vat",
       },
       {
         name: "PHÂN BÓN LÁ - THUỐC DƯỠNG ",
-        link: "phan-bon-la-thuoc-duong",
+        link: "collections/phan-bon-la-thuoc-duong",
       },
       {
         name: "PBL & BVTV AUSTRALIA",
-        link: "pbl-bvtv-austral",
+        link: "collections/pbl-bvtv-austral",
       },
       {
         name: "SPRAYPHOS 620SL",
-        link: "sprayphos-620sl",
+        link: "collections/sprayphos-620sl",
       },
       {
         name: "SẢN PHẢM CHO CAO SU ",
-        link: "san-pham-cho-cao-su",
+        link: "collections/san-pham-cho-cao-su",
       },
       {
         name: "SẢN PHẨM KHÁC",
-        link: "san-pham-khac",
+        link: "collections/san-pham-khac",
+      },
+      {
+        name: "Phân Bón",
+        link: "collections/phan-bon",
+      },
+      {
+        name: "Thuốc Bvtv",
+        link: "collections/thuoc-bvtv",
+      },
+      {
+        name: "Lúa gạo",
+        link: "collections/lua-gao",
+      },
+      {
+        name: "Giống cây trồng ",
+        link: "collections/giong-cay-trong",
       },
     ],
   },
   {
     name: "Thủy sản",
-    link: "/thuy-san",
+    link: "/collections/thuy-san",
     content: [
       {
         name: "XỬ LÝ & CẢI TẠO MÔI TRƯỜNG",
-        link: "xu-ly-cai-tao-moi-truong",
+        link: "collections/xu-ly-cai-tao-moi-truong",
       },
       {
         name: "DINH DƯỠNG & THỨC ĂN BỔ SUNG",
-        link: "dinh-duong-thuc-an-bo-sung",
+        link: "collections/dinh-duong-thuc-an-bo-sung",
       },
       {
         name: "MEN TIÊU HÓA",
-        link: "men-tieu-hoa",
+        link: "collections/men-tieu-hoa",
       },
       {
         name: "THẢO DƯỢC & TRỊ BỆNH",
-        link: "thao-duoc-tri-benh",
+        link: "collections/thao-duoc-tri-benh",
       },
     ],
   },
   {
     name: "Chăn nuôi",
-    link: "/chan-nuoi",
+    link: "/collections/chan-nuoi",
     content: [
       {
         name: "DINH DƯỠNG - HỖ TRỢ",
-        link: "dinh-duong-ho-tro",
+        link: "collections/dinh-duong-ho-tro",
       },
       {
         name: "THUỐC TRỊ BỆNH",
-        link: "thuoc-tri-benh",
+        link: "collections/thuoc-tri-benh",
       },
       {
         name: "VACCINE",
-        link: "vaccine",
+        link: "collections/vaccine",
       },
     ],
   },
