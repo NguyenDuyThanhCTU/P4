@@ -102,7 +102,7 @@
 
   
   .cols-4{
-    grid-template-columns: 15% 35% 30% 20%;
+    grid-template-columns: 10% 40% 30% 20%;
   }
 
   .cols-5{

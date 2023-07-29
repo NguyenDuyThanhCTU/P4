@@ -1,24 +1,17 @@
 import React, { useState } from "react";
 
-import { BiSearch, BiSearchAlt } from "react-icons/bi";
+import { BiSearchAlt } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineFormatListBulleted } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
 
 import { HeaderItems } from "../../../Utils/item";
 import DropDown from "../Item/DropDown";
-import { useData } from "../../../Context/DataProviders";
-import { AiFillCaretDown, AiFillCaretUp, AiFillPhone } from "react-icons/ai";
+import { AiFillCaretUp, AiFillPhone } from "react-icons/ai";
 
 const Header = () => {
   const [Hidden, setHidden] = useState(false);
-  const [isSelected, setSelected] = useState(0);
-  const navigate = useNavigate();
-  const HandleSelected = (idx) => {
-    if (idx === 4) {
-      window.open("tel:0933456474", "_blank");
-    }
-  };
+
   return (
     <>
       {/* <--- Desktop ---> */}
@@ -48,27 +41,29 @@ const Header = () => {
                     <Link to={items.link}>
                       <div className="flex items-center gap-3">
                         <p>{items.name}</p>
+
                         {items.content.length > 1 && (
                           <AiFillCaretUp className="group-hover:rotate-180 duration-300 " />
                         )}
                       </div>
                     </Link>
+
                     {items.content.length > 1 && (
                       <>
                         <div className="absolute mt-3  w-max h-auto border bg-white hidden group-hover:block">
                           {items.content.map((items, idx) => (
                             <div>
                               <Link to={`/${items.link}`}>
-                                <div className="py-4 px-8 font-light hover:text-main">
+                                <div className="py-4 px-8 font-light text-black hover:text-main">
                                   {items.name}
                                 </div>
                               </Link>
                             </div>
                           ))}
                         </div>
-                        <div className="bg-none  h-5 w-full absolute"></div>
                       </>
                     )}
+                    <div className="bg-none  h-5 w-auto   "></div>
                   </div>
                 ))}
               </div>
@@ -121,6 +116,7 @@ const Header = () => {
             {HeaderItems.map((items, idx) => (
               <DropDown
                 idx={idx}
+                dropdown={items.content}
                 content={items.name}
                 link={items.link}
                 setHidden={setHidden}

@@ -5,19 +5,22 @@ import News from "../components/Client/News/News";
 import Promotion from "../components/Client/Promotion/Promotion";
 import Videos from "../components/Client/Videos/Videos";
 import ClientLayout from "../Layout/ClientLayout/ClientLayout";
-import Collection from "../components/Client/Collection.jsx/Collection";
+import Collection from "../components/Client/Collection/Collection";
+import AdminLayout from "../Layout/AdminLayout/AdminLayout";
+import Login from "../components/Login/Login";
+import Admin from "../components/Admin/Admin";
 
 export const AllRoutes = [
-  // {
-  //   path: "/login",
-  //   component: Login,
-  //   Layout: DefaultLayout,
-  // },
-  // {
-  //   path: "/admin",
-  //   component: Admin,
-  //   Layout: AdminLayout,
-  // },
+  {
+    path: "/login",
+    component: Login,
+    Layout: AdminLayout,
+  },
+  {
+    path: "/admin",
+    component: Admin,
+    Layout: AdminLayout,
+  },
   {
     path: "/",
     component: Home,

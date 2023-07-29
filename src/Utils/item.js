@@ -376,7 +376,7 @@ export const HeaderItems = [
     link: "/tin-tuc",
     content: [
       {
-        name: "Video",
+        name: "Video/Hình ảnh",
         link: "videos",
       },
       {
@@ -402,6 +402,21 @@ export const HeaderItems = [
         link: "lien-he",
       },
     ],
+  },
+];
+
+export const TypeProductItems = [
+  {
+    name: "Nông nghiệp",
+    params: "nong-nghiep",
+  },
+  {
+    name: "Thủy sản",
+    params: "thuy-san",
+  },
+  {
+    name: "Chăn nuôi",
+    params: "chan-nuoi",
   },
 ];
 

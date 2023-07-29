@@ -11,6 +11,7 @@ import Footer from "./Section/Footer";
 
 const ClientLayout = ({ children }) => {
   const { TradeMarkData } = useData();
+  const isHome = children.type.name === "Home";
 
   return (
     <div className="relative">
@@ -22,7 +23,7 @@ const ClientLayout = ({ children }) => {
 
       <Header />
       <div className=" w-full flex justify-center ">
-        <div className="w-[1200px]">{children}</div>
+        <div className={isHome ? "w-auto" : "w-[1200px]"}>{children}</div>
       </div>
 
       <Footer />

@@ -3,9 +3,9 @@ import { ProductItems } from "../../Utils/temp";
 
 const Display = () => {
   return (
-    <div className="flex-[80%] py-10 flex flex-col gap-5">
+    <div className="flex-[80%] py-10 flex flex-col gap-5 px-2">
       <h3 className="font-semibold uppercase text-[18px]">Sản phẩm</h3>
-      <div className="grid d:grid-cols-3 gap-5 p:grid-cols-1">
+      <div className="grid d:grid-cols-3 gap-5 p:grid-cols-2 ">
         {ProductItems.map((items, idx) => (
           <div
             className="flex flex-col items-center cursor-pointer hover:scale-110 duration-500"
@@ -13,11 +13,11 @@ const Display = () => {
               window.open("tel:02973777272", "_blank");
             }}
           >
-            <div className="w-[270px] h-[200px] bg-gradient-to-t from-slate-300 to-green-100 flex justify-center">
+            <div className="d:w-[270px] p:w-auto h-[200px] bg-gradient-to-t from-slate-300 to-green-100 flex justify-center">
               <img
                 src={items.image}
                 alt="product"
-                className="w-[200px] h-full object-contain"
+                className="p:w-auto d:w-[200px] h-full object-contain"
               />
             </div>
             <div className="flex flex-col items-center">
