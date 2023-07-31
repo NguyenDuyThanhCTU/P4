@@ -64,8 +64,8 @@ const AddType = () => {
       const data = {
         type: Name,
         params: isParams,
-        parentName: isTitle,
-        parent: NameTitle,
+        parent: isTitle,
+        parentParams: NameTitle,
       };
 
       addDocument("productTypes", data).then(() => {
@@ -141,7 +141,7 @@ const AddType = () => {
                       </div>
                     </div>
                     <p className=" truncate">{data.type}</p>
-                    <p className=" truncate ml-2">{data.parentName}</p>
+                    <p className=" truncate ml-2">{data.parent}</p>
 
                     <div className="ml-5">
                       {data.daysSinceCreation > 0 ? (

@@ -1,12 +1,14 @@
 import React from "react";
 import { ProductItems } from "../../../../Utils/temp";
 import Category from "../../../Item/Category";
+import { useData } from "../../../../Context/DataProviders";
 
 const Section2 = () => {
+  const { Products } = useData();
   return (
     <>
       {" "}
-      <div className=" my-10 d:h-screen p:h-auto relative">
+      <div className=" my-10 d:h-auto p:h-auto relative">
         <div className="flex flex-col items-center gap-5">
           <h3 className="uppercase text-[22px] font-semibold">
             Sản phẩm nổi bật
@@ -22,7 +24,7 @@ const Section2 = () => {
                   <div></div>
                 </div>
                 <div className="grid d:grid-cols-6 d:gap-10  p:gap-2 px-2 p:grid-cols-2 justify-center ">
-                  {ProductItems.map((items, idx) => (
+                  {Products.map((items, idx) => (
                     <div
                       className="flex flex-col items-center cursor-pointer hover:scale-110 duration-500"
                       onClick={() => {

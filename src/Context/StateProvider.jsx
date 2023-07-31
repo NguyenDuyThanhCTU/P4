@@ -6,13 +6,15 @@ export const StateProvider = ({ children }) => {
   const [isUploadProduct, setIsUploadProduct] = useState("");
   const [isSelected, setSelected] = useState(0);
   const [isRefetch, setIsRefetch] = useState("");
-
+  const [updateId, setUpdateId] = useState("");
   //custom
   const [isLoading, setIsLoading] = useState(false);
 
   return (
     <StateContext.Provider
       value={{
+        updateId,
+        setUpdateId,
         isLoading,
         setIsLoading,
         isSelected,

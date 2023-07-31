@@ -21,14 +21,18 @@ const ClientLayout = ({ children }) => {
       </Helmet> */}
       <Loading />
 
-      <Header />
-      <div className=" w-full flex justify-center ">
+      <div className="relative z-50">
+        <Header />
+      </div>
+      <div className=" w-full flex justify-center relative z-10">
         <div className={isHome ? "w-auto" : "w-[1200px]"}>{children}</div>
       </div>
 
       <Footer />
-      <OnTop />
-      <Hotline />
+      <div className="relative z-20">
+        <OnTop />
+        <Hotline />
+      </div>
 
       <Copyright />
     </div>

@@ -29,12 +29,10 @@ const Category = () => {
         {HeaderItems.slice(1, 4).map((items, idx) => (
           <>
             <div
-              className="flex items-center justify-between py-4 px-4 border-b"
+              className="flex items-center justify-between py-4 px-4 border-b cursor-pointer"
               onClick={() => HandleSelect(idx)}
             >
-              <Link to={items.link}>
-                <div className="uppercase hover:text-main">{items.name}</div>
-              </Link>{" "}
+              <div className="uppercase hover:text-main">{items.name}</div>
               <BiChevronDown
                 className={`${
                   isDropDown && isSelected === idx && "-rotate-90"
@@ -45,15 +43,14 @@ const Category = () => {
             <div
               className={`${
                 isDropDown && isSelected === idx ? " h-[450px]" : " h-0"
-              } w-full overflow-hidden duration-500 bg-gray-300`}
+              } w-full overflow-hidden duration-500 bg-gray-300 cursor-pointer`}
+              onClick={() => setIsDropDown(false)}
             >
               {items.content.map((items, idx) => (
                 <>
-                  <Link to={items.link}>
-                    <div className="py-2 ml-4 text-[14px] text-gray-500 hover:text-white uppercase">
-                      {items.name}
-                    </div>
-                  </Link>
+                  <div className="py-2 ml-4 text-[14px] text-gray-500 hover:text-white uppercase">
+                    {items.name}
+                  </div>
                 </>
               ))}
             </div>

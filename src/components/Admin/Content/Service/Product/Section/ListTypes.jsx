@@ -21,7 +21,7 @@ const ListProduct = () => {
             <div className="flex flex-col cursor-pointer">
               {productTypes.map((items, idx) => (
                 <div>
-                  <div className="p-2">{items.name}</div>
+                  <div className="p-2">{items.type}</div>
                 </div>
               ))}
             </div>

@@ -15,11 +15,11 @@ import AddType from "./Item/AddType/AddType";
 import Profile from "./Header/Profile/Profile";
 import AddProduct from "./Item/AddProduct/AddProduct";
 import ProductDetail from "./Item/ProductDetail";
+import UpdateProduct from "./Item/Product/UpdateProduct";
 
 const Admin = () => {
   const { verify } = useAuth();
   const { isUploadProduct } = useStateProvider();
-  const [Hidden, setHidden] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     if (!verify) {
@@ -42,6 +42,8 @@ const Admin = () => {
           <AddType />
         ) : isUploadProduct === "add-product" ? (
           <AddProduct />
+        ) : isUploadProduct === "update-product" ? (
+          <UpdateProduct />
         ) : isUploadProduct === "product-detail" ? (
           <ProductDetail />
         ) : isUploadProduct === "profile" ? (

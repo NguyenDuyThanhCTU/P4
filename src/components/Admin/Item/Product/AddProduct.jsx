@@ -12,15 +12,19 @@ import { useStateProvider } from "../../../../Context/StateProvider";
 import { addDocument } from "../../../../Config/Services/Firebase/FireStoreDB";
 import { useData } from "../../../../Context/DataProviders";
 import { TypeProductItems } from "../../../../Utils/item";
+import diacritic from "diacritic";
 
 const AddProduct = ({}) => {
   const [imageUrl, setImageUrl] = useState();
   const [error, setError] = useState(false);
-  const [Title, setTitle] = useState();
-  const [Content, setContent] = useState();
-  const [Price, setPrice] = useState();
-  const [TitleType, setTitleType] = useState("Nông nghiệp");
-  const [ContentType, setContentType] = useState("");
+  const [Title, setTitle] = useState("");
+  const [Content, setContent] = useState("");
+  const [Price, setPrice] = useState("");
+
+  const [parentTypeName, setParentTypeName] = useState("Nông nghiệp");
+  const [parentType, setParentType] = useState("nong-nghiep");
+  const [typeName, setTypeName] = useState("");
+  const [Type, setType] = useState("");
 
   const { setIsUploadProduct, setIsRefetch } = useStateProvider();
   const { productTypes } = useData();
@@ -31,21 +35,49 @@ const AddProduct = ({}) => {
     setImageUrl("");
   };
 
+  const handleTitleChange = (e) => {
+    const selectedName = e.target.value;
+
+    setParentTypeName(selectedName);
+    const selectedItem = TypeProductItems.find(
+      (item) => item.name === selectedName
+    );
+    if (selectedItem) {
+      setParentType(selectedItem.params);
+    }
+  };
+
+  const convertToCodeFormat = (text) => {
+    const textWithoutDiacritics = diacritic.clean(text);
+    return textWithoutDiacritics.replace(/\s+/g, "-").toLowerCase();
+  };
+
+  useEffect(() => {
+    const handleChange = () => {
+      const userInput = typeName;
+      const formattedCode = convertToCodeFormat(userInput);
+      setType(formattedCode);
+    };
+    handleChange();
+  }, [typeName]);
+  console.log(typeName);
   const HandleSubmit = () => {
-    if (!ContentType || !TitleType || !Content || !Title || !imageUrl) {
+    if (!imageUrl || !typeName) {
       notification["error"]({
         message: "Lỗi !!!",
-        description: `Vui lòng bổ sung đầy đủ thông tin !`,
+        description: `Vui lòng bổ sung đầy đủ thông tin (hình ảnh & loại bài viết) !`,
       });
     } else {
       const data = {
         image: imageUrl,
         title: Title,
         content: Content,
-        parentType: TitleType,
-        type: ContentType,
+        price: Price,
+        parentTypeName: parentTypeName,
+        parentType: parentType,
+        type: Type,
+        typeName: typeName,
       };
-      console.log(data);
       addDocument("products", data).then(() => {
         notification["success"]({
           message: "Tải lên thành công!",
@@ -184,9 +216,7 @@ const AddProduct = ({}) => {
                       </label>
                       <select
                         className="outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
-                        onChange={(e) => {
-                          setTitleType(e.target.value);
-                        }}
+                        onChange={handleTitleChange}
                       >
                         {TypeProductItems.map((item, idx) => (
                           <option
@@ -206,11 +236,11 @@ const AddProduct = ({}) => {
                       <select
                         className="outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
                         onChange={(e) => {
-                          setContentType(e.target.value);
+                          setTypeName(e.target.value);
                         }}
                       >
                         {productTypes
-                          ?.filter((item) => item.parentName === TitleType)
+                          ?.filter((item) => item.parentParams === parentType)
                           .map((item, idx) => (
                             <option
                               key={idx}
@@ -224,8 +254,8 @@ const AddProduct = ({}) => {
                     </div>
                     <Input
                       text="Mô tả sản phẩm"
-                      Value={Price}
-                      setValue={setPrice}
+                      Value={Content}
+                      setValue={setContent}
                     />
                   </div>
                 </div>

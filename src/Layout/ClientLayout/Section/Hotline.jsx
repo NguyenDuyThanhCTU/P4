@@ -3,7 +3,7 @@ import { BiPhoneCall } from "react-icons/bi";
 
 function Hotline() {
   return (
-    <div className="fixed bottom-7 right-10  box-border">
+    <div className="fixed bottom-7 right-10  box-border cursor-pointer">
       <div
         className="flex items-center"
         onClick={() => {

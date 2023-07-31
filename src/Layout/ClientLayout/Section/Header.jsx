@@ -8,10 +8,11 @@ import { RxCross1 } from "react-icons/rx";
 import { HeaderItems } from "../../../Utils/item";
 import DropDown from "../Item/DropDown";
 import { AiFillCaretUp, AiFillPhone } from "react-icons/ai";
+import { useData } from "../../../Context/DataProviders";
 
 const Header = () => {
   const [Hidden, setHidden] = useState(false);
-
+  const { ContactData, TradeMarkData } = useData();
   return (
     <>
       {/* <--- Desktop ---> */}
@@ -20,7 +21,7 @@ const Header = () => {
           <div className="w-[1200px] h-[115px] flex justify-between items-center">
             <div className="">
               <img
-                src="https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/C%C3%B4ng%20ty%20c%E1%BB%95%20ph%E1%BA%A7n%20n%C3%B4ng%20nghi%E1%BB%87p%20sao%20v%C3%A0ng%2FLogo.jpg?alt=media&token=f420e137-735f-4207-ac68-e2e36ecf9514"
+                src={TradeMarkData.websiteLogo}
                 alt="logo"
                 className="h-[115px]"
               />
@@ -28,7 +29,7 @@ const Header = () => {
             <div>
               <div className="flex items-center gap-1 pb-2 border-b">
                 <AiFillPhone />
-                <p>02973.77.7272 - 0916.049.222</p>
+                <p>{ContactData.phone}</p>
               </div>
               <div className="pt-2 text-main">CHẤT LƯỢNG TỪ SỰ TẬN TÂM</div>
             </div>
