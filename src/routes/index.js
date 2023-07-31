@@ -9,6 +9,7 @@ import Collection from "../components/Client/Collection/Collection";
 import AdminLayout from "../Layout/AdminLayout/AdminLayout";
 import Login from "../components/Login/Login";
 import Admin from "../components/Admin/Admin";
+import DefaultLayout from "../Layout/DefaultLayout";
 
 export const AllRoutes = [
   {
@@ -24,7 +25,7 @@ export const AllRoutes = [
   {
     path: "/",
     component: Home,
-    Layout: ClientLayout,
+    Layout: DefaultLayout,
   },
   {
     path: "/about",

@@ -11,21 +11,20 @@ import Footer from "./Section/Footer";
 
 const ClientLayout = ({ children }) => {
   const { TradeMarkData } = useData();
-  const isHome = children.type.name === "Home";
 
   return (
     <div className="relative">
-      {/* <Helmet>
+      <Helmet>
         <title>{TradeMarkData.websiteName}</title>
         <link rel="icon" href={TradeMarkData.websiteIco} />
-      </Helmet> */}
+      </Helmet>
       <Loading />
 
       <div className="relative z-50">
         <Header />
       </div>
       <div className=" w-full flex justify-center relative z-10">
-        <div className={isHome ? "w-auto" : "w-[1200px]"}>{children}</div>
+        <div className="w-[1200px]">{children}</div>
       </div>
 
       <Footer />

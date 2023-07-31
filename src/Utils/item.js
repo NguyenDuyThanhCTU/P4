@@ -282,7 +282,7 @@ export const HeaderItems = [
     link: "/collections/nong-nghiep",
     content: [
       {
-        name: "PHÂN HỮU CƠ CHIM YẾN",
+        name: "Phân hữu cơ chim yến",
         link: "collections/phan-huu-co-chim-yen",
       },
       {

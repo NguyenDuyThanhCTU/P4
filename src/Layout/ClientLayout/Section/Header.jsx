@@ -8,11 +8,20 @@ import { RxCross1 } from "react-icons/rx";
 import { HeaderItems } from "../../../Utils/item";
 import DropDown from "../Item/DropDown";
 import { AiFillCaretUp, AiFillPhone } from "react-icons/ai";
+import { useStateProvider } from "../../../Context/StateProvider";
 import { useData } from "../../../Context/DataProviders";
 
 const Header = () => {
   const [Hidden, setHidden] = useState(false);
   const { ContactData, TradeMarkData } = useData();
+  const [searchKey, setSearchKey] = useState("");
+  const { setIsSort } = useStateProvider();
+  const navigate = useNavigate();
+
+  const HandleChange = () => {
+    setIsSort(searchKey);
+    navigate(`/collections/${searchKey}`);
+  };
   return (
     <>
       {/* <--- Desktop ---> */}
@@ -68,13 +77,19 @@ const Header = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex items-center bg-gray-300">
+              <div className={`flex items-center bg-gray-300  `}>
                 <input
                   type="text"
                   className="p-2 outline-none bg-gray-300"
                   placeholder="Tìm kiếm ..."
+                  onChange={(e) => setSearchKey(e.target.value)}
                 />
-                <div className="text-[24px] p-2 cursor-pointer">
+                <div
+                  className={`text-[24px] p-2 cursor-pointer duration-300 ${
+                    searchKey ? "text-blue-500 scale-125" : "text-black"
+                  }`}
+                  onClick={() => HandleChange()}
+                >
                   <BiSearchAlt />
                 </div>
               </div>

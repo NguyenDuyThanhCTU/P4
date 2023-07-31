@@ -3,11 +3,12 @@ import { HeaderItems } from "../../Utils/item";
 import { BiChevronDown } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-const Category = () => {
+const Category = ({ select }) => {
   const [isSelected, setSelected] = useState();
   const [isDropDown, setIsDropDown] = useState(false);
 
-  const HandleSelect = (idx) => {
+  const HandleSelect = (idx, name) => {
+    select(name);
     if (isSelected !== idx) {
       setIsDropDown(true);
       setSelected(idx);
@@ -16,6 +17,11 @@ const Category = () => {
       setSelected(idx);
     }
   };
+  const HandleClick = (name) => {
+    setIsDropDown(false);
+    select(name);
+  };
+
   return (
     <div className="py-10 flex-[20%] flex flex-col gap-5">
       <div>
@@ -30,7 +36,7 @@ const Category = () => {
           <>
             <div
               className="flex items-center justify-between py-4 px-4 border-b cursor-pointer"
-              onClick={() => HandleSelect(idx)}
+              onClick={() => HandleSelect(idx, items.name)}
             >
               <div className="uppercase hover:text-main">{items.name}</div>
               <BiChevronDown
@@ -44,11 +50,13 @@ const Category = () => {
               className={`${
                 isDropDown && isSelected === idx ? " h-[450px]" : " h-0"
               } w-full overflow-hidden duration-500 bg-gray-300 cursor-pointer`}
-              onClick={() => setIsDropDown(false)}
             >
               {items.content.map((items, idx) => (
                 <>
-                  <div className="py-2 ml-4 text-[14px] text-gray-500 hover:text-white uppercase">
+                  <div
+                    className="py-2 ml-4 text-[14px] text-gray-500 hover:text-white uppercase"
+                    onClick={() => HandleClick(items.name)}
+                  >
                     {items.name}
                   </div>
                 </>

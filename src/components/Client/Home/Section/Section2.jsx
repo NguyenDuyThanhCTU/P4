@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ProductItems } from "../../../../Utils/temp";
 import Category from "../../../Item/Category";
 import { useData } from "../../../../Context/DataProviders";
+import { useStateProvider } from "../../../../Context/StateProvider";
 
 const Section2 = () => {
+  const { setIsSort, isSort } = useStateProvider();
+  const [DataFetch, setDataFetch] = useState([]);
   const { Products } = useData();
+
+  useEffect(() => {
+    const Data = Products.filter(
+      (item) => item.parentTypeName === isSort || item.typeName === isSort
+    );
+
+    if (Data) {
+      setDataFetch(Data);
+    }
+  }, [Products, isSort]);
+
+  useEffect(() => {
+    setIsSort("Nông nghiệp");
+  }, []);
+
   return (
     <>
       {" "}
@@ -16,15 +34,17 @@ const Section2 = () => {
           <div className="w-[80vw] h-[1px] bg-black"></div>
           <div className="flex justify-center w-full mt-5 ">
             <div className="d:w-[100vw] p:w-auto flex gap-5 justify-center p:px-2 d:px-10 d:flex-row p:flex-col">
-              <Category />
+              <Category select={setIsSort} />
 
               <div className="flex-[80%] first-letter p:w-auto flex flex-col gap-3 font-LexendDeca">
                 <div className="bg-[#f5f5f5] w-full flex justify-between p-4">
-                  <div>54 Sản phẩm</div>
+                  <div>
+                    {DataFetch.length} Sản phẩm {isSort}
+                  </div>
                   <div></div>
                 </div>
                 <div className="grid d:grid-cols-6 d:gap-10  p:gap-2 px-2 p:grid-cols-2 justify-center ">
-                  {Products.map((items, idx) => (
+                  {DataFetch?.map((items, idx) => (
                     <div
                       className="flex flex-col items-center cursor-pointer hover:scale-110 duration-500"
                       onClick={() => {

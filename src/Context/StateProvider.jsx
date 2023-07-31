@@ -9,10 +9,13 @@ export const StateProvider = ({ children }) => {
   const [updateId, setUpdateId] = useState("");
   //custom
   const [isLoading, setIsLoading] = useState(false);
+  const [isSort, setIsSort] = useState("");
 
   return (
     <StateContext.Provider
       value={{
+        setIsSort,
+        isSort,
         updateId,
         setUpdateId,
         isLoading,

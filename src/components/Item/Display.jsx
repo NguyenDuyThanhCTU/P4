@@ -3,14 +3,19 @@ import { ProductItems } from "../../Utils/temp";
 import { useParams } from "react-router-dom";
 import { useData } from "../../Context/DataProviders";
 
-const Display = () => {
+const Display = ({ Data, content }) => {
   const { Products } = useData();
 
   return (
     <div className="flex-[80%] py-10 flex flex-col gap-5 px-2">
-      <h3 className="font-semibold uppercase text-[18px]">Sản phẩm</h3>
+      <div className="bg-[#f5f5f5] w-full flex justify-between p-4 font-semibold uppercase text-[18px]">
+        <div>
+          {Data.length} Sản phẩm {content}
+        </div>
+        <div></div>
+      </div>
       <div className="grid d:grid-cols-3 gap-5 p:grid-cols-2 ">
-        {Products.map((items, idx) => (
+        {Data.map((items, idx) => (
           <div
             className="flex flex-col items-center cursor-pointer hover:scale-110 duration-500"
             onClick={() => {
