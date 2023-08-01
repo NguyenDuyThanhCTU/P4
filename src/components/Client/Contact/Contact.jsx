@@ -64,7 +64,7 @@ const Contact = () => {
           <div className="p-2 flex justify-center gap-5 p:flex-col d:flex-row">
             <div>
               <img
-                src="https://scontent.fvca1-4.fna.fbcdn.net/v/t39.30808-6/357713516_112434035235319_3884387280129250238_n.jpg?stp=cp6_dst-jpg&_nc_cat=108&ccb=1-7&_nc_sid=e3f864&_nc_ohc=o5bEmpgpNgsAX_dTgK9&_nc_ht=scontent.fvca1-4.fna&oh=00_AfAKzTT0MVb3KYU_KkBh-TuPqdmEseSeMhRZZKfLfu67gA&oe=64C35055"
+                src="https://firebasestorage.googleapis.com/v0/b/nongnghiepsaovang-4042a.appspot.com/o/357713516_112434035235319_3884387280129250238_n.jpg?alt=media&token=f7b3b124-2950-4f20-976a-5e64a07363ab"
                 alt="img"
                 className="w-[685px]"
               />
@@ -96,7 +96,7 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <span className="uppercase py-2 px-6 bg-maincontent text-white cursor-pointer hover:bg-main">
+                  <span className="uppercase py-2 px-6 bg-maincontent text-white cursor-pointer hover:bg-main bg-green-500">
                     gửi đi
                   </span>
                 </div>

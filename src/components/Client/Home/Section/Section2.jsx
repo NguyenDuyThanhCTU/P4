@@ -3,6 +3,7 @@ import { ProductItems } from "../../../../Utils/temp";
 import Category from "../../../Item/Category";
 import { useData } from "../../../../Context/DataProviders";
 import { useStateProvider } from "../../../../Context/StateProvider";
+import { Link } from "react-router-dom";
 
 const Section2 = () => {
   const { setIsSort, isSort } = useStateProvider();
@@ -10,6 +11,9 @@ const Section2 = () => {
   const { Products } = useData();
 
   useEffect(() => {
+    if (isSort === "Phân bón") {
+      setIsSort("Nông nghiệp");
+    }
     const Data = Products.filter(
       (item) => item.parentTypeName === isSort || item.typeName === isSort
     );
@@ -45,28 +49,25 @@ const Section2 = () => {
                 </div>
                 <div className="grid d:grid-cols-6 d:gap-10  p:gap-2 px-2 p:grid-cols-2 justify-center ">
                   {DataFetch?.map((items, idx) => (
-                    <div
-                      className="flex flex-col items-center cursor-pointer hover:scale-110 duration-500"
-                      onClick={() => {
-                        window.open("tel:02973777272", "_blank");
-                      }}
-                    >
-                      <div className="w-auto h-[170px] bg-gradient-to-t from-slate-300 to-green-100 flex justify-center">
-                        <img
-                          src={items.image}
-                          alt="product"
-                          className="w-auto h-full object-contain px-3"
-                        />
+                    <Link to={`/product/${items.id}`}>
+                      <div className="flex flex-col items-center cursor-pointer hover:scale-110 duration-500">
+                        <div className="w-auto h-[170px] bg-gradient-to-t from-slate-300 to-green-100 flex justify-center">
+                          <img
+                            src={items.image}
+                            alt="product"
+                            className="w-auto h-full object-contain px-3"
+                          />
+                        </div>
+                        <div className="flex flex-col items-center w-full border py-2">
+                          <p className="hover:text-main duration-300">
+                            Sản phẩm {idx}
+                          </p>
+                          <a href="" className="text-red-500">
+                            Liên hệ
+                          </a>
+                        </div>
                       </div>
-                      <div className="flex flex-col items-center w-full border py-2">
-                        <p className="hover:text-main duration-300">
-                          Sản phẩm {idx}
-                        </p>
-                        <a href="" className="text-red-500">
-                          Liên hệ
-                        </a>
-                      </div>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </div>

@@ -278,47 +278,15 @@ export const HeaderItems = [
     ],
   },
   {
-    name: "Nông nghiệp",
-    link: "/collections/nong-nghiep",
+    name: "Danh mục sản phẩm",
+    link: "/collections/danh-muc-san-pham",
     content: [
       {
-        name: "Phân hữu cơ chim yến",
-        link: "collections/phan-huu-co-chim-yen",
-      },
-      {
-        name: "PHÂN HỮU CƠ AUSTRALIA",
-        link: "collections/phan-huu-co-australia",
-      },
-      {
-        name: "THUỐC BẢO VỆ THỰC VẬT",
-        link: "collections/thuoc-bao-ve-thuc-vat",
-      },
-      {
-        name: "PHÂN BÓN LÁ - THUỐC DƯỠNG ",
-        link: "collections/phan-bon-la-thuoc-duong",
-      },
-      {
-        name: "PBL & BVTV AUSTRALIA",
-        link: "collections/pbl-bvtv-austral",
-      },
-      {
-        name: "SPRAYPHOS 620SL",
-        link: "collections/sprayphos-620sl",
-      },
-      {
-        name: "SẢN PHẢM CHO CAO SU ",
-        link: "collections/san-pham-cho-cao-su",
-      },
-      {
-        name: "SẢN PHẨM KHÁC",
-        link: "collections/san-pham-khac",
-      },
-      {
-        name: "Phân Bón",
+        name: "Phân bón",
         link: "collections/phan-bon",
       },
       {
-        name: "Thuốc Bvtv",
+        name: "Thuốc BVTV",
         link: "collections/thuoc-bvtv",
       },
       {
@@ -326,51 +294,20 @@ export const HeaderItems = [
         link: "collections/lua-gao",
       },
       {
-        name: "Giống cây trồng ",
-        link: "collections/giong-cay-trong",
+        name: "Giống cây trồng",
+        link: "collections/giong-caytrong",
+      },
+      {
+        name: "Tuyển dụng",
+        link: "tuyen-dung",
+      },
+      {
+        name: "Video/hình ảnh",
+        link: "videos",
       },
     ],
   },
-  {
-    name: "Thủy sản",
-    link: "/collections/thuy-san",
-    content: [
-      {
-        name: "XỬ LÝ & CẢI TẠO MÔI TRƯỜNG",
-        link: "collections/xu-ly-cai-tao-moi-truong",
-      },
-      {
-        name: "DINH DƯỠNG & THỨC ĂN BỔ SUNG",
-        link: "collections/dinh-duong-thuc-an-bo-sung",
-      },
-      {
-        name: "MEN TIÊU HÓA",
-        link: "collections/men-tieu-hoa",
-      },
-      {
-        name: "THẢO DƯỢC & TRỊ BỆNH",
-        link: "collections/thao-duoc-tri-benh",
-      },
-    ],
-  },
-  {
-    name: "Chăn nuôi",
-    link: "/collections/chan-nuoi",
-    content: [
-      {
-        name: "DINH DƯỠNG - HỖ TRỢ",
-        link: "collections/dinh-duong-ho-tro",
-      },
-      {
-        name: "THUỐC TRỊ BỆNH",
-        link: "collections/thuoc-tri-benh",
-      },
-      {
-        name: "VACCINE",
-        link: "collections/vaccine",
-      },
-    ],
-  },
+
   {
     name: "Tin tức",
     link: "/tin-tuc",
@@ -407,16 +344,8 @@ export const HeaderItems = [
 
 export const TypeProductItems = [
   {
-    name: "Nông nghiệp",
-    params: "nong-nghiep",
-  },
-  {
-    name: "Thủy sản",
-    params: "thuy-san",
-  },
-  {
-    name: "Chăn nuôi",
-    params: "chan-nuoi",
+    name: "Danh mục sản phẩm",
+    params: "danh-muc-san-pham",
   },
 ];
 

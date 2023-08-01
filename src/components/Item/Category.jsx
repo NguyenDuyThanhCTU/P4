@@ -7,8 +7,7 @@ const Category = ({ select }) => {
   const [isSelected, setSelected] = useState();
   const [isDropDown, setIsDropDown] = useState(false);
 
-  const HandleSelect = (idx, name) => {
-    select(name);
+  const HandleSelect = (idx) => {
     if (isSelected !== idx) {
       setIsDropDown(true);
       setSelected(idx);
@@ -32,11 +31,11 @@ const Category = ({ select }) => {
         ></div>
       </div>
       <div className="flex flex-col">
-        {HeaderItems.slice(1, 4).map((items, idx) => (
+        {HeaderItems.slice(1, 2).map((items, idx) => (
           <>
             <div
               className="flex items-center justify-between py-4 px-4 border-b cursor-pointer"
-              onClick={() => HandleSelect(idx, items.name)}
+              onClick={() => HandleSelect(idx)}
             >
               <div className="uppercase hover:text-main">{items.name}</div>
               <BiChevronDown

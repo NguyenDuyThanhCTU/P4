@@ -36,7 +36,12 @@ const Header = () => {
               />
             </div>
             <div>
-              <div className="flex items-center gap-1 pb-2 border-b">
+              <div
+                className="flex items-center gap-1 pb-2 border-b cursor-pointer"
+                onClick={() =>
+                  window.open(`tel:${ContactData.phone}`, "_blank")
+                }
+              >
                 <AiFillPhone />
                 <p>{ContactData.phone}</p>
               </div>

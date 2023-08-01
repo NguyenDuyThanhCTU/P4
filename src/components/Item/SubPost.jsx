@@ -2,7 +2,6 @@ import React from "react";
 import { SlCalender } from "react-icons/sl";
 
 const SubPost = ({ Data }) => {
-  console.log(Data);
   return (
     <div className="flex-[30%] flex flex-col gap-5 py-10">
       <h3 className="font-semibold uppercase text-[20px]">Bài viết mới nhất</h3>

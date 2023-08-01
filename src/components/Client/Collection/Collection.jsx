@@ -9,9 +9,11 @@ const Collection = () => {
   const { setIsSort, isSort } = useStateProvider();
   const [DataFetch, setDataFetch] = useState([]);
   const { Products } = useData();
-  const { id } = useParams();
 
   useEffect(() => {
+    if (isSort === "Phân bón") {
+      setIsSort("Nông nghiệp");
+    }
     const Data = Products.filter(
       (item) => item.parentTypeName === isSort || item.typeName === isSort
     );
@@ -19,19 +21,11 @@ const Collection = () => {
     if (Data) {
       setDataFetch(Data);
     }
-  }, [isSort]);
+  }, [Products, isSort]);
 
   useEffect(() => {
-    if (id === "nong-nghiep") {
-      setIsSort("Nông nghiệp");
-    } else if (id === "thuy-san") {
-      setIsSort("Thủy sản");
-    } else if (id === "chan-nuoi") {
-      setIsSort("Chăn nuôi");
-    } else {
-      setIsSort(id);
-    }
-  }, [id]);
+    setIsSort("Nông nghiệp");
+  }, []);
 
   return (
     <div className="flex d:flex-row p:flex-col">

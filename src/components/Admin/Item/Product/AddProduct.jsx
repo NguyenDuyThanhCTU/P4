@@ -60,7 +60,6 @@ const AddProduct = ({}) => {
     };
     handleChange();
   }, [typeName]);
-  console.log(typeName);
   const HandleSubmit = () => {
     if (!imageUrl || !typeName) {
       notification["error"]({

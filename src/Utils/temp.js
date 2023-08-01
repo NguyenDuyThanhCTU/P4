@@ -2,22 +2,12 @@ export const VideoItems = [
   {
     title: "Trồng rau mùa mưa tỉ lệ sống cao theo các mẹo của Vườn Sài Gòn",
     content: "",
-    video: "https://www.youtube.com/embed/_4MelKBxxG8",
+    video: "https://www.youtube.com/embed/Wn3z6BQsmXo",
   },
   {
     title: "",
     content: "",
-    video: "https://www.youtube.com/embed/_4MelKBxxG8",
-  },
-  {
-    title: "",
-    content: "",
-    video: "https://www.youtube.com/embed/_4MelKBxxG8",
-  },
-  {
-    title: "",
-    content: "",
-    video: "https://www.youtube.com/embed/_4MelKBxxG8",
+    video: "https://www.youtube.com/embed/7E5MseQKyPc",
   },
 ];
 
@@ -141,24 +131,5 @@ export const ProductItems = [
     typeName: "",
     image:
       "https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/C%C3%B4ng%20ty%20c%E1%BB%95%20ph%E1%BA%A7n%20n%C3%B4ng%20nghi%E1%BB%87p%20sao%20v%C3%A0ng%2FproductDemo%2Fz4549353672993_43678b51cb2754abbb6c6daf9b6ff6cf.jpg?alt=media&token=d072d146-9791-4b11-a1c7-a689f38110cc",
-  },
-];
-
-export const HomeSlideItems = [
-  {
-    image:
-      "https://theme.hstatic.net/1000065644/1000522025/14/slideshow_1.jpg?v=221",
-  },
-  {
-    image:
-      "https://theme.hstatic.net/1000065644/1000522025/14/slideshow_2.jpg?v=221",
-  },
-  {
-    image:
-      "https://theme.hstatic.net/1000065644/1000522025/14/slideshow_3.jpg?v=221",
-  },
-  {
-    image:
-      "https://theme.hstatic.net/1000065644/1000522025/14/slideshow_4.jpg?v=221",
   },
 ];

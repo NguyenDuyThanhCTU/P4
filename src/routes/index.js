@@ -10,6 +10,7 @@ import AdminLayout from "../Layout/AdminLayout/AdminLayout";
 import Login from "../components/Login/Login";
 import Admin from "../components/Admin/Admin";
 import DefaultLayout from "../Layout/DefaultLayout";
+import Detail from "../components/Client/Detail/Detail";
 
 export const AllRoutes = [
   {
@@ -55,6 +56,11 @@ export const AllRoutes = [
   {
     path: "/collections/:id",
     component: Collection,
+    Layout: ClientLayout,
+  },
+  {
+    path: "/product/:id",
+    component: Detail,
     Layout: ClientLayout,
   },
 ];
