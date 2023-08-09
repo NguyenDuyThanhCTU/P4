@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AiFillPhone, AiFillPrinter, AiOutlineMail } from "react-icons/ai";
 import { BsFillHouseFill } from "react-icons/bs";
 import {
@@ -8,9 +8,15 @@ import {
 } from "../../../Utils/item";
 import { Link } from "react-router-dom";
 import { useData } from "../../../Context/DataProviders";
+import { isMobile } from "react-device-detect";
 
 const Footer = () => {
   const { ContactData, TradeMarkData, SocialMedia } = useData();
+
+  const desktopHref = "https://chat.zalo.me/?phone=" + SocialMedia[0];
+  const mobileHref = "https://zalo.me/" + SocialMedia[0];
+  const href = isMobile ? mobileHref : desktopHref;
+  console.log(href);
   return (
     <div className="w-full  flex justify-center items-center bg-[#212121]">
       <div className="d:w-[1200px] p:w-auto grid d:grid-cols-4 text-white d:gap-3 p:gap-6 py-5 p:grid-cols-1 px-2">
@@ -72,7 +78,11 @@ const Footer = () => {
 
                 return (
                   <>
-                    <a href={`https://${Point}`} target="_blank">
+                    <a
+                      href={`${idx === 0 ? href : `https://${Point}`}`}
+                      target="_blank"
+                      id={items.icon}
+                    >
                       <div
                         className={`${items.style} p-2 border rounded-full hover:scale-110 duration-300`}
                       >

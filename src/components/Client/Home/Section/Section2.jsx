@@ -62,9 +62,6 @@ const Section2 = () => {
                           <p className="hover:text-main duration-300">
                             Sản phẩm {idx}
                           </p>
-                          <a href="" className="text-red-500">
-                            Liên hệ
-                          </a>
                         </div>
                       </div>
                     </Link>

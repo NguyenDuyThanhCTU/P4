@@ -7,10 +7,11 @@ import Videos from "../components/Client/Videos/Videos";
 import ClientLayout from "../Layout/ClientLayout/ClientLayout";
 import Collection from "../components/Client/Collection/Collection";
 import AdminLayout from "../Layout/AdminLayout/AdminLayout";
-import Login from "../components/Login/Login";
-import Admin from "../components/Admin/Admin";
+
 import DefaultLayout from "../Layout/DefaultLayout";
 import Detail from "../components/Client/Detail/Detail";
+import Login from "../components/Login/Login";
+import Admin from "../components/Admin/Admin";
 
 export const AllRoutes = [
   {

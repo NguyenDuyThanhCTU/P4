@@ -30,6 +30,7 @@ const Verify = ({ verify, isId }) => {
   };
 
   const onFinish = (values) => {
+    console.log(values);
     if (
       values.username === accounts.username &&
       values.password === accounts.password

@@ -3,6 +3,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+import { IconMapping, ProductOptionItems } from "../../../../../../Utils/item";
 import { useStateProvider } from "../../../../../../Context/StateProvider";
 import { useData } from "../../../../../../Context/DataProviders";
 
@@ -21,7 +22,7 @@ const ListProduct = () => {
             <div className="flex flex-col cursor-pointer">
               {productTypes.map((items, idx) => (
                 <div>
-                  <div className="p-2">{items.type}</div>
+                  <div className="p-2">{items.name}</div>
                 </div>
               ))}
             </div>

@@ -19,22 +19,17 @@ import { AiOutlineCloudUpload } from "react-icons/ai";
 import ListProduct from "./ListTypes";
 
 const ListProducts = ({ name }) => {
-  const { setIsRefetch, setIsUploadProduct, setUpdateId } = useStateProvider();
+  const { setIsRefetch, setIsUploadProduct } = useStateProvider();
   const { Products } = useData();
 
   const HandleDelete = (id) => {
-    delDocument("products", id).then(() => {
+    delDocument("slide", id).then(() => {
       notification["success"]({
         message: "Thành công!",
         description: `Yêu cầu của bạn đã được thực hiện thành công !`,
       });
     });
     setIsRefetch("deleted");
-  };
-
-  const HandleEdit = (id) => {
-    setUpdateId(id);
-    setIsUploadProduct("update-product");
   };
 
   return (
@@ -64,8 +59,11 @@ const ListProducts = ({ name }) => {
                           delay: 2500,
                           disableOnInteraction: false,
                         }}
+                        pagination={{
+                          clickable: true,
+                        }}
                         navigation={true}
-                        modules={[Autoplay, Navigation]}
+                        modules={[Autoplay, Pagination, Navigation]}
                         className="mySwiper"
                       >
                         {Products.map((items) => (
@@ -119,10 +117,7 @@ const ListProducts = ({ name }) => {
                         <div className="w-[120px] bg-white opacity-90 absolute -top-2 h-8 left-5 rounded-lg hidden group-hover:block ">
                           <div className="mx-3 flex  justify-between text-[24px] h-full items-center ">
                             <FcViewDetails className="hover:scale-125 duration-300" />
-                            <FiEdit
-                              className="text-green-600 hover:scale-125 duration-300"
-                              onClick={() => HandleEdit(data.id)}
-                            />
+                            <FiEdit className="text-green-600 hover:scale-125 duration-300" />
                             <Popconfirm
                               title="Xóa sản phẩm"
                               description="Bạn muốn xóa sản phẩm này?"

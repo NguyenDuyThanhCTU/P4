@@ -16,6 +16,7 @@ const Category = ({ select }) => {
       setSelected(idx);
     }
   };
+
   const HandleClick = (name) => {
     setIsDropDown(false);
     select(name);

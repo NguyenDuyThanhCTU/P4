@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 
 import { Popconfirm, message, notification } from "antd";
@@ -14,43 +14,16 @@ import {
   delDocument,
 } from "../../../../Config/Services/Firebase/FireStoreDB";
 import { TypeProductItems } from "../../../../Utils/item";
-import diacritic from "diacritic";
 
 const AddType = () => {
   const [Name, setName] = useState("");
-  const [isParams, setIsParams] = useState("");
-  const [NameTitle, setNameTitle] = useState("nong-nghiep");
-  const [isTitle, setTitle] = useState("Nông nghiệp");
+  const [isTitle, setTitle] = useState("Thiết kế - Thi công nội thất");
 
   const { setIsRefetch, setIsUploadProduct } = useStateProvider();
   const { productTypes } = useData();
 
   const handleDiscard = () => {
     setName("");
-  };
-  const convertToCodeFormat = (text) => {
-    const textWithoutDiacritics = diacritic.clean(text);
-    return textWithoutDiacritics.replace(/\s+/g, "-").toLowerCase();
-  };
-
-  useEffect(() => {
-    const handleChange = () => {
-      const userInput = Name;
-      const formattedCode = convertToCodeFormat(userInput);
-      setIsParams(formattedCode);
-    };
-    handleChange();
-  }, [Name]);
-
-  const handleTitleChange = (e) => {
-    const selectedName = e.target.value;
-    setNameTitle(selectedName);
-    const selectedItem = TypeProductItems.find(
-      (item) => item.name === selectedName
-    );
-    if (selectedItem) {
-      setTitle(selectedItem.params);
-    }
   };
 
   const HandleSubmit = () => {
@@ -62,10 +35,8 @@ const AddType = () => {
       });
     } else {
       const data = {
-        type: Name,
-        params: isParams,
-        parent: isTitle,
-        parentParams: NameTitle,
+        name: Name,
+        type: isTitle,
       };
 
       addDocument("productTypes", data).then(() => {
@@ -103,17 +74,17 @@ const AddType = () => {
               <p className="text-2xl font-bold text-center mb-3">
                 Danh sách loại sản phẩm
               </p>
-              <div className=" grid  cols-4 items-center py-2  justify-start  border-t border-l border-r border-black  px-5 ">
+              <div className="grid  cols-4 items-center py-2  justify-start  border-t border-l border-r border-black">
                 <p> </p>
                 <p>Tên thể loại</p>
-                <p className="ml-4">Mục</p>
+                <p>Mục</p>
                 <p>Thời gian</p>
               </div>
               <div className="w-full border border-black h-[300px] overflow-y-scroll">
                 {productTypes?.map((data, idx) => (
                   <div
                     key={idx}
-                    className="grid  cols-4 items-center gap-1  my-5  ml-1  px-5 "
+                    className="grid  cols-4 items-center  my-5  ml-1  px-5 "
                   >
                     <div className="group relative ">
                       <FiEdit className="text-red-600 hover:scale-125 duration-300 " />
@@ -140,8 +111,8 @@ const AddType = () => {
                         <div className="absolute bg-none w-3 h-8 top-0 -left-2"></div>
                       </div>
                     </div>
+                    <p className=" truncate">{data.name}</p>
                     <p className=" truncate">{data.type}</p>
-                    <p className=" truncate ml-2">{data.parent}</p>
 
                     <div className="ml-5">
                       {data.daysSinceCreation > 0 ? (
@@ -185,8 +156,10 @@ const AddType = () => {
                   </label>
                   <select
                     className="outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
-                    onChange={handleTitleChange}
-                    value={NameTitle}
+                    onChange={(e) => {
+                      setTitle(e.target.value);
+                    }}
+                    value={isTitle}
                   >
                     {TypeProductItems.map((item, idx) => (
                       <option

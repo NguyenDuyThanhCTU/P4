@@ -12,19 +12,14 @@ import { useStateProvider } from "../../../../Context/StateProvider";
 import { addDocument } from "../../../../Config/Services/Firebase/FireStoreDB";
 import { useData } from "../../../../Context/DataProviders";
 import { TypeProductItems } from "../../../../Utils/item";
-import diacritic from "diacritic";
 
 const AddProduct = ({}) => {
   const [imageUrl, setImageUrl] = useState();
   const [error, setError] = useState(false);
-  const [Title, setTitle] = useState("");
-  const [Content, setContent] = useState("");
-  const [Price, setPrice] = useState("");
-
-  const [parentTypeName, setParentTypeName] = useState("Nông nghiệp");
-  const [parentType, setParentType] = useState("nong-nghiep");
-  const [typeName, setTypeName] = useState("");
-  const [Type, setType] = useState("");
+  const [Title, setTitle] = useState();
+  const [Content, setContent] = useState();
+  const [TitleType, setTitleType] = useState("Thiết kế - Thi công nội thất");
+  const [ContentType, setContentType] = useState("");
 
   const { setIsUploadProduct, setIsRefetch } = useStateProvider();
   const { productTypes } = useData();
@@ -35,48 +30,21 @@ const AddProduct = ({}) => {
     setImageUrl("");
   };
 
-  const handleTitleChange = (e) => {
-    const selectedName = e.target.value;
-
-    setParentTypeName(selectedName);
-    const selectedItem = TypeProductItems.find(
-      (item) => item.name === selectedName
-    );
-    if (selectedItem) {
-      setParentType(selectedItem.params);
-    }
-  };
-
-  const convertToCodeFormat = (text) => {
-    const textWithoutDiacritics = diacritic.clean(text);
-    return textWithoutDiacritics.replace(/\s+/g, "-").toLowerCase();
-  };
-
-  useEffect(() => {
-    const handleChange = () => {
-      const userInput = typeName;
-      const formattedCode = convertToCodeFormat(userInput);
-      setType(formattedCode);
-    };
-    handleChange();
-  }, [typeName]);
   const HandleSubmit = () => {
-    if (!imageUrl || !typeName) {
+    if (!ContentType || !TitleType || !Content || !Title || !imageUrl) {
       notification["error"]({
         message: "Lỗi !!!",
-        description: `Vui lòng bổ sung đầy đủ thông tin (hình ảnh & loại bài viết) !`,
+        description: `Vui lòng bổ sung đầy đủ thông tin !`,
       });
     } else {
       const data = {
         image: imageUrl,
         title: Title,
         content: Content,
-        price: Price,
-        parentTypeName: parentTypeName,
-        parentType: parentType,
-        type: Type,
-        typeName: typeName,
+        parentType: TitleType,
+        type: ContentType,
       };
+      console.log(data);
       addDocument("products", data).then(() => {
         notification["success"]({
           message: "Tải lên thành công!",
@@ -194,20 +162,18 @@ const AddProduct = ({}) => {
               <div class=" w-[700px] flex flex-col  items-center">
                 <div className="grid grid-cols-2 gap-5 w-full">
                   <div className="  flex flex-col gap-3">
+                    <Input text="Tiêu đề" Value={Title} setValue={setTitle} />
                     <Input
-                      text="Tên sản phẩm"
-                      Value={Title}
-                      setValue={setTitle}
+                      text="Nội dung"
+                      Value={Content}
+                      setValue={setContent}
                     />
-
-                    <Input text="Giá" Value={Price} setValue={setPrice} />
                     <Input
                       text="Liên kết hình ảnh"
                       Value={imageUrl}
                       setValue={setImageUrl}
                     />
                   </div>
-
                   <div className="  flex flex-col gap-3">
                     <div className="flex flex-col gap-2">
                       <label className="text-md font-medium ">
@@ -215,7 +181,9 @@ const AddProduct = ({}) => {
                       </label>
                       <select
                         className="outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
-                        onChange={handleTitleChange}
+                        onChange={(e) => {
+                          setTitleType(e.target.value);
+                        }}
                       >
                         {TypeProductItems.map((item, idx) => (
                           <option
@@ -235,27 +203,22 @@ const AddProduct = ({}) => {
                       <select
                         className="outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
                         onChange={(e) => {
-                          setTypeName(e.target.value);
+                          setContentType(e.target.value);
                         }}
                       >
                         {productTypes
-                          ?.filter((item) => item.parentParams === parentType)
+                          ?.filter((item) => item.type === TitleType)
                           .map((item, idx) => (
                             <option
                               key={idx}
                               className=" outline-none capitalize bg-white text-gray-700 text-md p-2 hover:bg-slate-300"
-                              value={item.type}
+                              value={item.name}
                             >
-                              {item.type}
+                              {item.name}
                             </option>
                           ))}
                       </select>
                     </div>
-                    <Input
-                      text="Mô tả sản phẩm"
-                      Value={Content}
-                      setValue={setContent}
-                    />
                   </div>
                 </div>
 
