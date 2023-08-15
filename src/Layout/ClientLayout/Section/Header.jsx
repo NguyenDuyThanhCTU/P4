@@ -103,16 +103,7 @@ const Header = () => {
         </div>
 
         <div className="p:block d:hidden ">
-          <div className="justify-between mx-5 flex items-center">
-            <div className="py-2">
-              <Link to="/">
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/C%C3%B4ng%20ty%20c%E1%BB%95%20ph%E1%BA%A7n%20n%C3%B4ng%20nghi%E1%BB%87p%20sao%20v%C3%A0ng%2FLogo.jpg?alt=media&token=f420e137-735f-4207-ac68-e2e36ecf9514"
-                  alt="logo"
-                  className="w-14 object-cover"
-                />
-              </Link>
-            </div>
+          <div className="justify-between mx-5 flex items-center w-[70vw]">
             <div>
               <div className="flex items-center text-[65px]">
                 {Hidden ? (
@@ -127,6 +118,15 @@ const Header = () => {
                   />
                 )}
               </div>
+            </div>
+            <div className="py-2">
+              <Link to="/">
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/fir-d82f9.appspot.com/o/C%C3%B4ng%20ty%20c%E1%BB%95%20ph%E1%BA%A7n%20n%C3%B4ng%20nghi%E1%BB%87p%20sao%20v%C3%A0ng%2FLogo.jpg?alt=media&token=f420e137-735f-4207-ac68-e2e36ecf9514"
+                  alt="logo"
+                  className="w-44 object-cover"
+                />
+              </Link>
             </div>
           </div>
           <div

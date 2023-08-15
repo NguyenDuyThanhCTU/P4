@@ -60,7 +60,7 @@ const Section2 = () => {
                         </div>
                         <div className="flex flex-col items-center w-full border py-2">
                           <p className="hover:text-main duration-300">
-                            Sản phẩm {idx}
+                            {items.title ? items.title : ` Sản phẩm ${idx}`}
                           </p>
                         </div>
                       </div>

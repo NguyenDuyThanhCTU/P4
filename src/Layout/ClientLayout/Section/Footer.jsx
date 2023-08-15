@@ -16,7 +16,7 @@ const Footer = () => {
   const desktopHref = "https://chat.zalo.me/?phone=" + SocialMedia[0];
   const mobileHref = "https://zalo.me/" + SocialMedia[0];
   const href = isMobile ? mobileHref : desktopHref;
-  console.log(href);
+
   return (
     <div className="w-full  flex justify-center items-center bg-[#212121]">
       <div className="d:w-[1200px] p:w-auto grid d:grid-cols-4 text-white d:gap-3 p:gap-6 py-5 p:grid-cols-1 px-2">
@@ -33,7 +33,7 @@ const Footer = () => {
               <div className="mt-1">
                 <AiOutlineMail />
               </div>
-              marketing@toba.vn
+              {SocialMedia.gmail}
             </div>
 
             <div className="flex items-start gap-1">
